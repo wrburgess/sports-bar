@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-SportsBar::Application.config.secret_key_base = 'c15bfa227e8ccdb9bdad2ccefb047baaa9025a8d58db49ed40e5e7af04ef5cc8f07b12b8aa05f243e0a1b4652d205d784cb7638560d52e26b46f21ae2fdcb12b'
+SportsBar::Application.config.secret_key_base = ENV["APP_SECRET_KEY_BASE"]
