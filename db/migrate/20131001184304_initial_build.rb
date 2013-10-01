@@ -9,19 +9,32 @@ class InitialBuild < ActiveRecord::Migration
       t.string   "state"
       t.string   "zipcode"
       t.string   "logo_url"
+      t.integer  "year_founded"
       t.boolean  "provides_game_sound"
-      t.string   "provides_wifi"
+      t.boolean  "provides_wifi"
+      t.boolean  "provides_power"
       t.string   "tv_provider"
       t.integer  "rating"
       t.integer  "occupancy"
       t.boolean  "smoking_allowed"
-      t.boolean  "sun_hours"
-      t.boolean  "mon_hours"
-      t.boolean  "tues_hours"
-      t.boolean  "wed_hours"
-      t.boolean  "thu_hours"
-      t.boolean  "fri_hours"
-      t.boolean  "sat_hours"
+      t.boolean  "staff_wear_colors"
+      t.integer  "tv_quantity"
+      t.integer  "high_definition"
+      t.integer  "sun_open_hour"
+      t.integer  "mon_open_hour"
+      t.integer  "tue_open_hour"
+      t.integer  "wed_open_hour"
+      t.integer  "thu_open_hour"
+      t.integer  "fri_open_hour"
+      t.integer  "sat_open_hour"
+      t.integer  "sun_close_hour"
+      t.integer  "mon_close_hour"
+      t.integer  "tue_close_hour"
+      t.integer  "wed_close_hour"
+      t.integer  "thu_close_hour"
+      t.integer  "fri_close_hour"
+      t.integer  "sat_close_hour"
+      t.string   "editor_note"
       t.string   "website_url"
       t.datetime "created_at",          null: false
       t.datetime "updated_at",          null: false
@@ -40,7 +53,7 @@ class InitialBuild < ActiveRecord::Migration
       t.datetime "updated_at",          null: false
     end
 
-    create_table "location_images", force: true do |t|
+    create_table "images", force: true do |t|
       t.integer  "location_id"
       t.datetime "created_at",          null: false
       t.datetime "updated_at",          null: false
@@ -55,6 +68,15 @@ class InitialBuild < ActiveRecord::Migration
       t.integer  "food_rating"
       t.integer  "drink_rating"
       t.integer  "seating_rating"
+      t.datetime "created_at",          null: false
+      t.datetime "updated_at",          null: false
+    end
+
+    create_table "flags", force: true do |t|
+      t.integer  "location_id"
+      t.integer  "user_id"
+      t.string   "type"
+      t.string   "comment"
       t.datetime "created_at",          null: false
       t.datetime "updated_at",          null: false
     end
