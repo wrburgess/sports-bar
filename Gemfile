@@ -9,11 +9,14 @@ gem "haml-rails", "0.4.0"
 gem "jquery-rails", "3.0.4"
 gem "json", "1.8.0"
 gem "pg", "0.17.0"
-gem "rails_12factor", "0.0.2"
 gem "sass-rails", "4.0.0"
 gem "settingslogic", "2.0.9"
 gem "uglifier", "2.2.1"
 gem "unicorn", "4.6.3"
+
+group :production do 
+  gem "rails_12factor", "0.0.2"
+end
 
 group :development do
   gem "better_errors", "1.0.1"

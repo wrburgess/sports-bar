@@ -7,8 +7,9 @@ describe LocationsController do
     response.should be_success
   end
 
-  xit 'should have a show' do
-    get :show 
+  it 'should have a show' do
+    location = FactoryGirl.create :location
+    get :show, id: location 
     response.should be_success
   end
 
