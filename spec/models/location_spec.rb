@@ -12,8 +12,8 @@ describe Location do
 
   # it { should have_many(:flags) }
   # it { should have_many(:images) }
-  it { should have_many(:reviews) }
   # it { should have_many(:users) }
+  it { should have_many(:reviews) }
   it { should have_many(:location_teams) }
   it { should have_many(:teams) }
 

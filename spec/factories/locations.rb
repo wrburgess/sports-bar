@@ -5,7 +5,7 @@ FactoryGirl.define do
     city "Chicago"
     state "Illinois"
     zipcode 60657
-    logo_url "http://assets.bestsportsbars.in/dev/location_logo.png"
+    logo_url "http://placehold.it/200X200"
     year_founded { rand(1950..2012) }
     provides_game_sound true
     provides_wifi true
