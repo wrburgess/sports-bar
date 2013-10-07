@@ -8,6 +8,7 @@ class InitialBuild < ActiveRecord::Migration
       t.string   "address_2"
       t.string   "city"
       t.string   "city_slug"
+      t.string   "neighborhood"
       t.string   "state"
       t.string   "zipcode"
       t.string   "logo_url"

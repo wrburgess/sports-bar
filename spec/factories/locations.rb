@@ -7,6 +7,7 @@ FactoryGirl.define do
     address_1 "3252 N Clifton Ave"
     city "Chicago"
     city_slug "chicago"
+    neighborhood "Lakeview"
     state "Illinois"
     zipcode 60657
     logo_url "http://placehold.it/200X200"
