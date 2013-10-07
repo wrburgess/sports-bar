@@ -3,9 +3,11 @@ class InitialBuild < ActiveRecord::Migration
 
     create_table "locations", force: true do |t|
       t.string   "name"
+      t.string   "name_slug"
       t.string   "address_1"
       t.string   "address_2"
       t.string   "city"
+      t.string   "city_slug"
       t.string   "state"
       t.string   "zipcode"
       t.string   "logo_url"

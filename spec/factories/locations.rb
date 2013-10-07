@@ -1,8 +1,12 @@
 FactoryGirl.define do
+  location_name = Faker::Company.name.titleize
+
   factory :location do
-    name { Faker::Company.name.titleize }
+    name location_name
+    name_slug location_name.parameterize
     address_1 "3252 N Clifton Ave"
     city "Chicago"
+    city_slug "chicago"
     state "Illinois"
     zipcode 60657
     logo_url "http://placehold.it/200X200"

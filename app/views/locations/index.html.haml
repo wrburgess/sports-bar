@@ -1,0 +1,5 @@
+- @locations.each do |location|
+  %ul
+    %li
+      %a 
+        = link_to location.name, location_slug_path(city: location.city_slug, slug: location.name_slug), title: location.name

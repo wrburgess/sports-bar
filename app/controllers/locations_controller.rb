@@ -1,11 +1,15 @@
 class LocationsController < ApplicationController
 
   def index
-    @locations = Location.all
+    if params[:city].present?
+      @locations = Location.where(city_slug: params[:city])
+    else
+      @locations = Location.all
+    end
   end
 
   def show
-    @location = Location.find params[:id]
+    @location = Location.where(city_slug: params[:city], name_slug: params[:name]) 
   end
 
 end
