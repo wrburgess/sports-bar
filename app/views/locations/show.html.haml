@@ -1,7 +1,8 @@
-.sidebar
-  = render "shared/sidebar", locations: @locations
-.main
-  %h1 
-    = @location.name
-  .location-body
-    = @location.address_1
+.row
+  .sidebar.col-xs-3
+    = render "shared/sidebar", locations: @locations
+  .main.col-xs-9
+    %h1 
+      = @location.name
+    .location-body
+      = @location.address_1
