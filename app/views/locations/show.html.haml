@@ -1,0 +1,7 @@
+.sidebar
+  = render "shared/sidebar", locations: @locations
+.main
+  %h1 
+    = @location.name
+  .location-body
+    = @location.address_1
