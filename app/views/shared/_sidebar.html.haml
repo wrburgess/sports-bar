@@ -1,5 +1,4 @@
-- locations.each do |location|
-  %ul
+%ul{ class: "nav nav-pills nav-stacked" }
+  - locations.each do |location|
     %li
-      %a 
-        = link_to location.name, location_slug_path(city: location.city_slug, name: location.name_slug), title: location.name
+      = link_to location.name, location_slug_path(city: location.city_slug, name: location.name_slug), title: location.name

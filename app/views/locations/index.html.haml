@@ -1,4 +1,6 @@
-.sidebar
-  = render "shared/sidebar", locations: @locations
-.main
-  INDEX CONTENT
+.row
+  .sidebar.col-xs-12.col-sm-5.col-md-4.col-lg-4
+    = render "shared/sidebar", locations: @locations
+
+  .main.col-xs-12.col-sm-7.col-md-8.col-lg-8
+    INDEX CONTENT
