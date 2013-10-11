@@ -1,12 +1,16 @@
 class LocationsController < ApplicationController
 
+  def home
+    @locations = Location.limit(10).order(:overall_rating)
+  end
+
   def index
-    @locations = load_locations
+    @locations = Location.where(city_slug: params[:city]).order(:city_rating).limit(10)
+
+    @location = Location.where(city_slug: params[:city]).order(:city_rating).first
   end
 
   def show
-    @locations = load_locations
-
     @location = Location.where(city_slug: params[:city], name_slug: params[:name]).first 
   end
 
@@ -14,9 +18,9 @@ class LocationsController < ApplicationController
 
   def load_locations
     if params[:city].present?
-      Location.where(city_slug: params[:city])
+      @locations = Location.where(city_slug: params[:city])
     else
-      Location.all
+      @locations = Location.all
     end
   end
 end

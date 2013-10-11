@@ -1,9 +1,7 @@
 FactoryGirl.define do
-  location_name = Faker::Company.name.titleize
-
   factory :location do
-    name location_name
-    name_slug location_name.parameterize
+    name { Faker::Company.name }
+    name_slug { "#{name}".parameterize }
     address_1 "3252 N Clifton Ave"
     city "Chicago"
     city_slug "chicago"
@@ -16,7 +14,8 @@ FactoryGirl.define do
     provides_wifi true
     provides_power false
     tv_provider "DirecTV"
-    rating { rand(1..5) }
+    city_rating { rand(1..10) }
+    overall_rating { rand(1..100) }
     occupancy { rand(25..200) }
     smoking_allowed false
     staff_wear_colors true

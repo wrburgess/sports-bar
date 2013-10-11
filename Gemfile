@@ -25,7 +25,7 @@ end
 
 group :development, :test do
   gem "capybara", "2.1.0"
-  gem "database_cleaner", "1.1.1"
+  gem "database_cleaner", "1.2.0"
   gem "debugger", "1.6.2"
   gem "dotenv-rails", "0.9.0"
   gem "fuubar", "1.2.1"
@@ -34,3 +34,6 @@ group :development, :test do
   gem "rspec-rails", "2.14.0"
   gem "shoulda", "3.5.0"
 end
+
+# for analysis
+# gem "rack-mini-profiler", "0.1.31"
