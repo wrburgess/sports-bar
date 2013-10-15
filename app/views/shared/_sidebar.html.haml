@@ -1,4 +1,7 @@
 %ul{ class: "nav nav-pills nav-stacked" }
   - locations.each do |location|
     %li
-      = link_to location.name, location_slug_path(city: location.city_slug, name: location.name_slug), title: location.name
+      %span.rating
+        \##{location.city_rating}
+      %span.link
+        = link_to location.name, location_slug_path(city: location.city_slug, name: location.name_slug), title: location.name

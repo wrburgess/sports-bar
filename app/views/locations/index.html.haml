@@ -2,9 +2,106 @@
   = render "shared/sidebar", locations: @locations
 
 .main.col-xs-12.col-sm-7.col-md-8.col-lg-8
-  .location-rating
-    \##{@location.city_rating}
-  %h1 
-    = @location.name
-  .location-body
-    = @location.address_1
+  .row  
+    .h1 
+      <em>##{@location.city_rating}</em> #{@location.name}
+
+  .row
+    .body
+      .row
+        .images.col-xs-12.col-sm-12.col-md-6.col-lg-6
+          %img{ src: "http://placehold.it/300X200", alt: "#{@location.name}" }
+
+        .info.col-xs-12.col-sm-12.col-md-6.col-lg-6
+          .details
+            Established: #{@location.year_founded}
+
+          .address
+            .street
+              #{@location.address_1}
+            .city-state
+              #{@location.city}, #{@location.state} #{@location.zipcode}
+            .website
+              Site: #{link_to @location.website_url, @location.website_url, target: "_blank"}
+            .email
+              Email: #{mail_to "test@test.com", "test@test.com"}
+              
+      .row
+        .ratings.col-xs-12.col-sm-12.col-md-6.col-lg-6
+          %h2
+            Ratings
+          %table
+            %tr
+              %td.col-label
+                Screen Rating
+              %td
+                4 
+              %td.col-label
+                Service Rating
+              %td
+                4 
+            %tr
+              %td.col-label
+                Food Rating
+              %td
+                4 
+              %td.col-label
+                Drink Rating
+              %td
+                4 
+            %tr
+              %td.col-label
+                Seating Rating
+              %td
+                4
+              %td.col-label
+                Some Other Rating
+              %td
+                4
+
+        .amenities.col-xs-12.col-sm-12.col-md-6.col-lg-6
+          %h2
+            Amenities
+          %table
+            %tr
+              %td
+                Number of Screens
+              %td
+                15
+              %td
+                TV Provider
+              %td
+                DirecTV
+            %tr
+              %td
+                HD TVs?
+              %td
+                Yes
+              %td
+                Has WiFi?
+              %td
+                Yes
+            %tr
+              %td
+                Power Outlets?
+              %td
+                No
+              %td
+                Game Sound?
+              %td
+                Yes
+            %tr
+              %td
+                Staff Colors?
+              %td
+                No
+              %td
+                Non-smoking?
+              %td
+                Yes
+    .row
+      .review.col-xs-12.col-sm-12.col-md-12.col-lg-12
+        %h2
+          Review
+        %p
+          Suspendisse potenti. Maecenas viverra tortor nec tempor cursus. Cras at mi in arcu congue ultricies vitae quis odio. Suspendisse nec vestibulum mauris. Donec tincidunt cursus accumsan. Maecenas fringilla elementum felis, eget adipiscing leo elementum non. Nunc quis quam eget urna sagittis placerat ut vitae massa.

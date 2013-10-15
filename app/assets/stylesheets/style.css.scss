@@ -3,18 +3,6 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-@mixin rotate($degrees) {
-  -webkit-transform: rotate(#{$degrees}deg);
-  -moz-transform: rotate(#{$degrees}deg);
-  -ms-transform: rotate(#{$degrees}deg);
-  -o-transform: rotate(#{$degrees}deg);
-  transform: rotate(#{$degrees}deg);
-
-  filter:  progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=-#{sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)});
-  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=-#{sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)})";
-  zoom: 1;
-}
-
 header {
 
   .logo {
@@ -33,23 +21,42 @@ header {
   }
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
   font-family: 'Roboto Slab', serif;
+}
+
+.sidebar {
+  
+  ul {
+
+    li {
+      font-size: 1.8em;
+
+      .rating {
+        
+        color: $dark_red;
+        font-family: 'Colleged', serif;
+        font-style: normal;
+      }
+    }
+  }
 }
 
 .main {
 
-  .location-rating {
-    color: $dark_red;
-    display: inline-block;
-    font-family: 'Colleged', serif;
-    font-size: 2.0em;
-    @include rotate(-10);
-    border-radius: 999px;
-    border: $dark_red solid 3px;
-    width: 36px;
-    height: 36px;
-    padding: 8px;
+  .h1 {
+    font-family: 'Roboto Slab', serif;
+
+    em {
+      color: $dark_red;
+      font-family: 'Colleged', serif;
+      font-size: 0.8em;
+      font-style: normal;
+    }
+  }
+
+  .location-body {
+
   }
 }
 

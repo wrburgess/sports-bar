@@ -40,6 +40,7 @@ class InitialBuild < ActiveRecord::Migration
       t.integer  "sat_close_hour"
       t.string   "editor_note"
       t.string   "website_url"
+      t.string   "email_address"
       t.datetime "created_at",          null: false
       t.datetime "updated_at",          null: false
     end  

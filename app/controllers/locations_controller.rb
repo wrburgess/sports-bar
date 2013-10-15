@@ -7,11 +7,12 @@ class LocationsController < ApplicationController
   def index
     @locations = Location.where(city_slug: params[:city]).order(:city_rating).limit(10)
 
-    @location = Location.where(city_slug: params[:city]).order(:city_rating).first
-  end
 
-  def show
-    @location = Location.where(city_slug: params[:city], name_slug: params[:name]).first 
+    if params[:name].present?
+      @location = Location.where(city_slug: params[:city], name_slug: params[:name]).first
+    else
+      @location = Location.where(city_slug: params[:city]).order(:city_rating).first
+    end
   end
 
   private
