@@ -11,4 +11,6 @@ class Location < ActiveRecord::Base
   has_many :location_teams
   has_many :teams, through: :location_teams
 
+  belongs_to :city
+
 end

@@ -2,6 +2,9 @@
   - locations.each do |location|
     %li
       %span.rating
-        \##{location.city_rating}
+        - if params[:action] == "home"
+          \##{location.overall_rating}
+        - else
+          \##{location.city_rating}
       %span.link
-        = link_to location.name, location_slug_path(city: location.city_slug, name: location.name_slug), title: location.name
+        = link_to location.name, location_slug_path(city: location.city.slug, name: location.name_slug), title: location.name

@@ -1,10 +1,9 @@
 FactoryGirl.define do
   factory :location do
+    city
     name { Faker::Company.name }
     name_slug { "#{name}".parameterize }
     address_1 "3252 N Clifton Ave 3W"
-    city "Chicago"
-    city_slug "chicago"
     neighborhood "Lakeview"
     state "Illinois"
     zipcode 60657

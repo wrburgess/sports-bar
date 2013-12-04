@@ -16,6 +16,13 @@ ActiveRecord::Schema.define(version: 20131001184304) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "cities", force: true do |t|
+    t.string "name"
+    t.string "slug"
+    t.string "variations", array: true
+    t.string "state"
+  end
+
   create_table "flags", force: true do |t|
     t.integer  "location_id"
     t.integer  "user_id"
@@ -39,12 +46,11 @@ ActiveRecord::Schema.define(version: 20131001184304) do
   end
 
   create_table "locations", force: true do |t|
+    t.integer  "city_id"
     t.string   "name"
     t.string   "name_slug"
     t.string   "address_1"
     t.string   "address_2"
-    t.string   "city"
-    t.string   "city_slug"
     t.string   "neighborhood"
     t.string   "state"
     t.string   "zipcode"
@@ -77,6 +83,7 @@ ActiveRecord::Schema.define(version: 20131001184304) do
     t.integer  "sat_close_hour"
     t.string   "editor_note"
     t.string   "website_url"
+    t.string   "email_address"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end

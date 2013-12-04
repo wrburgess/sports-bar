@@ -1,9 +1,11 @@
 require 'spec_helper'
 
 describe LocationsController do
-
-  let(:location1) { FactoryGirl.create(:location) }
-  let(:location2) { FactoryGirl.create(:location) }
+  
+  let(:city1) { FactoryGirl.create :city, name: "Orlando", state: "FL", slug: "orlando", variations: ["orlando", "o-town"] }
+  let(:city2) { FactoryGirl.create :city, name: "DC", state: "VA", slug: "dc", variations: ["dc", "washington-dc"] }
+  let(:location1) { FactoryGirl.create :location, name: "Bar-1", city: city1 }
+  let(:location2) { FactoryGirl.create :location, name: "Bar-2", city: city2 }
 
   describe "#index" do
     it 'should have an index' do

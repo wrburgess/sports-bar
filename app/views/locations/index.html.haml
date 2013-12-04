@@ -4,7 +4,10 @@
 .main.col-xs-12.col-sm-7.col-md-8.col-lg-8
   .row  
     .h1 
-      <em>##{@location.city_rating}</em> #{@location.name}
+      - if params[:action] == "home"
+        <em>##{@location.overall_rating}</em> #{@location.name}
+      - else
+        <em>##{@location.city_rating}</em> #{@location.name}
 
   .row
     .body
@@ -20,7 +23,7 @@
             .street
               #{@location.address_1}
             .city-state
-              #{@location.city}, #{@location.state} #{@location.zipcode}
+              #{@location.city.name}, #{@location.state} #{@location.zipcode}
             .website
               Site: #{link_to @location.website_url, @location.website_url, target: "_blank"}
             .email
@@ -31,6 +34,15 @@
           %h2
             Ratings
           %table
+            %tr
+              %td.col-label
+                Overall Rank
+              %td
+                = @location.overall_rating 
+              %td.col-label
+                City Rank
+              %td
+                = @location.city_rating 
             %tr
               %td.col-label
                 Screen Rating
